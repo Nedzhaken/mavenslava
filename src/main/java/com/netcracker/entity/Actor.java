@@ -1,4 +1,4 @@
-package com.netcracker.substance;
+package com.netcracker.entity;
 
 import java.util.Calendar;
 

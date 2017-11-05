@@ -2,7 +2,7 @@ package com.netcracker.infrastructure.repositories;
 
 
 
-import com.netcracker.substance.Actor;
+import com.netcracker.entity.Actor;
 
 import java.util.ArrayList;
 

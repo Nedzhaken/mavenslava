@@ -1,6 +1,6 @@
 package com.netcracker.infrastructure.repositories;
 
-import com.netcracker.substance.FilmActor;
+import com.netcracker.entity.FilmActor;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.netcracker.substance;
+package com.netcracker.entity;
 
 public class FilmActor {
     private int filmid;

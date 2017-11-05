@@ -1,6 +1,6 @@
 package com.netcracker.infrastructure.repositories;
 
-import com.netcracker.substance.Style;
+import com.netcracker.entity.Style;
 
 import java.util.ArrayList;
 

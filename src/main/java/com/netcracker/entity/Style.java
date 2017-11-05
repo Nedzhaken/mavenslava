@@ -1,4 +1,4 @@
-package com.netcracker.substance;
+package com.netcracker.entity;
 
 public class Style {
     private static int counterid=0;

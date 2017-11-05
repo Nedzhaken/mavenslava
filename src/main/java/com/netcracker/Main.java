@@ -3,8 +3,8 @@ package com.netcracker;
 import com.netcracker.infrastructure.repositories.StyleRepository;
 import com.netcracker.infrastructure.repositories.StyleRepositoryImpl;
 import com.netcracker.infrastructure.services.Controller;
-import com.netcracker.substance.Film;
-import com.netcracker.substance.Style;
+import com.netcracker.entity.Film;
+import com.netcracker.entity.Style;
 
 import java.util.*;
 

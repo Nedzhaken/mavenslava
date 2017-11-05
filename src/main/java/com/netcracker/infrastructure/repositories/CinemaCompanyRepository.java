@@ -1,6 +1,6 @@
 package com.netcracker.infrastructure.repositories;
 
-import com.netcracker.substance.CinemaCompany;
+import com.netcracker.entity.CinemaCompany;
 
 import java.util.ArrayList;
 
