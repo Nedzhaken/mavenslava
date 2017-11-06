@@ -7,11 +7,18 @@ public class CinemaCompany {
     private final int companyid;
     private  String name;
     private String countryname;
-    private ArrayList films;
+    private ArrayList<Film> films;
 
     public CinemaCompany() {
         this.companyid = counterid;
         this.counterid++;
+    }
+
+    public CinemaCompany(String name, String countryname) {
+        this.companyid = counterid;
+        this.counterid++;
+        this.name = name;
+        this.countryname = countryname;
     }
 
     public void setName(String name) {
@@ -22,16 +29,9 @@ public class CinemaCompany {
         this.countryname = countryname;
     }
 
-    public void setFilms(ArrayList films) {
+    public void setFilms(ArrayList<Film> films) {
         this.films = films;
     }
-
-    public CinemaCompany(String name, String countryname) {
-        this.companyid = counterid;
-        this.counterid++;
-        this.name = name;
-        this.countryname = countryname;
-        }
 
     public int getCompanyid() {
         return companyid;
@@ -45,7 +45,7 @@ public class CinemaCompany {
         return countryname;
     }
 
-    public ArrayList getFilms() {
+    public ArrayList<Film> getFilms() {
 
         return films;
     }

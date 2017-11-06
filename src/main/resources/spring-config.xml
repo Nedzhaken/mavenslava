@@ -4,6 +4,20 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="style" class="com.netcracker.entity.Style" scope="prototype"></bean>
 
+    <bean id="actor" class="com.netcracker.entity.Actor" scope="prototype"/>
 
-</beans>
+    <bean id="cinemaCompany" class="com.netcracker.entity.CinemaCompany" scope="prototype"/>
+
+    <bean id="filmActor" class="com.netcracker.entity.FilmActor" scope="prototype">
+        <!--  <constructor-arg value=""/>
+         <constructor-arg name="actor" ref="actor"/>-->
+     </bean>
+
+     <bean id="film" class="com.netcracker.entity.Film" scope="prototype">
+         <constructor-arg ref="style" />
+         <constructor-arg ref="cinemaCompany" />
+     </bean>
+
+ </beans>

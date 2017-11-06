@@ -3,7 +3,7 @@ package com.netcracker.entity;
 import java.util.Date;
 
 public class Film {
-    private static int counterid=0;
+    private static int counterid=1;
     private final int filmid;
     private Date releasedate;
     private int budget;
@@ -15,6 +15,24 @@ public class Film {
     public Film() {
         this.filmid = counterid;
         this.counterid++;
+    }
+
+    public Film(Date releasedate, int budget, Style style, String name, CinemaCompany company, int bookid) {
+        this.filmid = counterid;
+        this.counterid++;
+        this.releasedate = releasedate;
+        this.budget = budget;
+        this.style = style;
+        this.name = name;
+        this.company = company;
+        this.bookid = bookid;
+    }
+
+    public Film(Style style, CinemaCompany company) {
+        this.filmid = counterid;
+        this.counterid++;
+        this.style = style;
+        this.company = company;
     }
 
     public void setReleasedate(Date releasedate) {
@@ -38,17 +56,6 @@ public class Film {
     }
 
     public void setBookid(int bookid) {
-        this.bookid = bookid;
-    }
-
-    public Film(Date releasedate, int budget, Style style, String name, CinemaCompany company, int bookid) {
-        this.filmid = counterid;
-        this.counterid++;
-        this.releasedate = releasedate;
-        this.budget = budget;
-        this.style = style;
-        this.name = name;
-        this.company = company;
         this.bookid = bookid;
     }
 

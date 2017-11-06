@@ -18,10 +18,11 @@
             <version>4.3.4.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
+            <version>4.3.4.RELEASE</version>
         </dependency>
 
         <!---->

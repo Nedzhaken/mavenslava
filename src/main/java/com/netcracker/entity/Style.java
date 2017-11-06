@@ -10,13 +10,13 @@ public class Style {
         this.counterid++;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Style(String name) {
         this.styleid = counterid;
         this.counterid++;
+        this.name = name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 

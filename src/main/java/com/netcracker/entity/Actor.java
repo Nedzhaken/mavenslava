@@ -9,6 +9,19 @@ public class Actor {
     private String lastname;
     private Calendar birthdate;
 
+    public Actor() {
+        this.actorid = counterid;
+        this.counterid++;
+    }
+
+    public Actor(String firstname, String lastname, Calendar birthdate) {
+        this.actorid = counterid;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+        this.counterid++;
+    }
+
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -19,14 +32,6 @@ public class Actor {
 
     public void setBirthdate(Calendar birthdate) {
         this.birthdate = birthdate;
-    }
-
-    public Actor(String firstname, String lastname, Calendar birthdate) {
-        this.actorid = counterid;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.birthdate = birthdate;
-        this.counterid++;
     }
 
     public int getActor_id() {
@@ -45,8 +50,4 @@ public class Actor {
         return birthdate;
     }
 
-    public Actor() {
-        this.actorid = counterid;
-        this.counterid++;
-    }
 }
