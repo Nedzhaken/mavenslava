@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class FilmActor {
     private int filmid;
-    private ArrayList<Actor> actor;
+    private Actor actor;
 
     public void setFilmid(int filmid) {
         this.filmid = filmid;
     }
 
-    public void setActor(ArrayList<Actor> actor) {
+    public void setActor(Actor actor) {
         this.actor = actor;
     }
 
     public FilmActor() {
     }
 
-    public FilmActor(int filmid, ArrayList<Actor> actor) {
+    public FilmActor(int filmid, Actor actor) {
         this.filmid = filmid;
         this.actor = actor;
     }
@@ -26,7 +26,7 @@ public class FilmActor {
         return filmid;
     }
 
-    public ArrayList<Actor> getActor() {
+    public Actor getActor() {
         return actor;
     }
 }

@@ -1,46 +1,35 @@
 package com.netcracker.entity;
 
 import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
 
 public class Film {
-    private static int counterid=1;
-    private final int filmid;
+
+    private UUID filmid;
     private Date releasedate;
-    private int budget;
     private Style style;
     private String name;
     private CinemaCompany company;
     private int bookid;
+    private List<Actor> actors;
 
     public Film() {
-        this.filmid = counterid;
-        this.counterid++;
+        this.filmid=UUID.randomUUID();
     }
 
-    public Film(Date releasedate, int budget, Style style, String name, CinemaCompany company, int bookid) {
-        this.filmid = counterid;
-        this.counterid++;
+    public Film(Date releasedate, Style style, String name, CinemaCompany company, int bookid) {
+        filmid=UUID.randomUUID();
         this.releasedate = releasedate;
-        this.budget = budget;
         this.style = style;
         this.name = name;
         this.company = company;
         this.bookid = bookid;
     }
 
-    public Film(Style style, CinemaCompany company) {
-        this.filmid = counterid;
-        this.counterid++;
-        this.style = style;
-        this.company = company;
-    }
-
     public void setReleasedate(Date releasedate) {
         this.releasedate = releasedate;
-    }
-
-    public void setBudget(int budget) {
-        this.budget = budget;
     }
 
     public void setStyle(Style style) {
@@ -59,14 +48,14 @@ public class Film {
         this.bookid = bookid;
     }
 
-    public int getFilmid() { return filmid; }
+    public void setActors(List<Actor> actors) {
+        this.actors = actors;
+    }
+
+    public UUID getFilmid() { return filmid; }
 
     public Date getReleasedate() {
         return releasedate;
-    }
-
-    public int getBudget() {
-        return budget;
     }
 
     public Style getStyle() {
@@ -82,4 +71,14 @@ public class Film {
     public int getBookid() {
         return bookid;
     }
+
+    public List<Actor> getActors() {
+        return actors;
+    }
+
+    @Override
+    public String toString(){
+        return "Film [id="+getFilmid().toString()+" name="+getName()+"]";
+    }
+
 }

@@ -10,7 +10,7 @@ public class FilmActorRepositoryImpl implements FilmActorRepository {
     @Override
     public void save(FilmActor filmActor) {
         list.add(filmActor);
-        System.out.println("Save successfully = "+filmActor.getFilmid()+" "+filmActor.getActor().getActor_id());
+        //System.out.println("Save successfully = "+filmActor.getFilmid()+" "+filmActor.getActor().getActor_id());
     }
 
     @Override
@@ -20,10 +20,11 @@ public class FilmActorRepositoryImpl implements FilmActorRepository {
             return null;
         }
         else {
-            for(int index=0;index<list.size();index++){
-                System.out.println(list.get(index).getFilmid()+" "+list.get(index).getActor().getActor_id());
-            }
+            //for(int index=0;index<list.size();index++){
+                //System.out.println(list.get(index).getFilmid()+" "+list.get(index).getActor().getActor_id());
             return list;
+            }
+
         }
     }
-}
+

@@ -1,52 +1,51 @@
 package com.netcracker.entity;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 
 public class CinemaCompany {
-    private static int counterid=0;
-    private final int companyid;
-    private  String name;
-    private String countryname;
-    private ArrayList<Film> films;
+    private String companyid;
+    private String companyname;
+    private List<Film> films;
 
     public CinemaCompany() {
-        this.companyid = counterid;
-        this.counterid++;
+        this.companyid=UUID.randomUUID().toString();
     }
 
-    public CinemaCompany(String name, String countryname) {
-        this.companyid = counterid;
-        this.counterid++;
-        this.name = name;
-        this.countryname = countryname;
+    public CinemaCompany(String name) {
+        this.companyid=UUID.randomUUID().toString();
+        this.companyname = name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public CinemaCompany(String companyid,String name) {
+        this.companyid=companyid;
+        this.companyname = name;
     }
 
-    public void setCountryname(String countryname) {
-        this.countryname = countryname;
+    public void setCompanyname(String name) {
+        this.companyname = name;
     }
 
-    public void setFilms(ArrayList<Film> films) {
+    public void setFilms(List<Film> films) {
         this.films = films;
     }
 
-    public int getCompanyid() {
+    public String getCompanyid() {
         return companyid;
     }
 
-    public String getName() {
-        return name;
+    public String getCompanyname() {
+        return companyname;
     }
 
-    public String getCountryname() {
-        return countryname;
-    }
-
-    public ArrayList<Film> getFilms() {
+    public List<Film> getFilms() {
 
         return films;
+    }
+
+    @Override
+    public String toString(){
+        return "Company [id="+getCompanyid().toString()+" name="+getCompanyname()+"]";
     }
 }

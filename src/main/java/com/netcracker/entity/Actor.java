@@ -1,25 +1,26 @@
 package com.netcracker.entity;
 
 import java.util.Calendar;
+import java.util.List;
+import java.util.UUID;
 
 public class Actor {
-    private static int counterid=0;
-    private final int actorid;
+
+    private UUID actoridd;
     private String firstname;
     private String lastname;
     private Calendar birthdate;
+    private List<Film> films;
 
     public Actor() {
-        this.actorid = counterid;
-        this.counterid++;
+        this.actoridd=UUID.randomUUID();
     }
 
     public Actor(String firstname, String lastname, Calendar birthdate) {
-        this.actorid = counterid;
+        this.actoridd=UUID.randomUUID();
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;
-        this.counterid++;
     }
 
     public void setFirstname(String firstname) {
@@ -34,8 +35,12 @@ public class Actor {
         this.birthdate = birthdate;
     }
 
-    public int getActor_id() {
-        return actorid;
+    public void setFilms(List<Film> films) {
+        this.films = films;
+    }
+
+    public UUID getActorid() {
+        return actoridd;
     }
 
     public String getFirstname() {
@@ -46,8 +51,27 @@ public class Actor {
         return lastname;
     }
 
+    public String getName(){
+        return firstname+' '+lastname;
+    }
+
     public Calendar getBirthdate() {
         return birthdate;
     }
 
+    public List<Film> getFilms() {
+        return films;
+    }
+
+    @Override
+    public String toString(){
+        if(this == null){
+            System.out.println("Error, Actor is null");
+            return null;
+        }
+        else{
+            return "Style [id="+getActorid().toString()+" name="+getName()+"]";
+        }
+
+    }
 }
