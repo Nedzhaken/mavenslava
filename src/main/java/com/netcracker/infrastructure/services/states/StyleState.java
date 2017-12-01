@@ -1,20 +1,22 @@
 package com.netcracker.infrastructure.services.states;
 
 import com.netcracker.infrastructure.services.Controller;
+import com.netcracker.infrastructure.services.ServiceStyle;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AdminState extends AbstractState implements State {
+public class StyleState extends AbstractState implements State {
 
+    ServiceStyle serviceStyle=new ServiceStyle();
     private Controller controller;
 
-    public AdminState(Controller controller) {
+    public StyleState(Controller controller) {
         this.controller = controller;
     }
     @Override
     public void work(){
-        System.out.println("Help\nState\nStyle\nCompany\nFilms\nActors\nChange\nExit\n");
+        System.out.println("Help\nState\nLoadAllStyle\nClearStyle\nBack\nExit\n");
         try {
             Scanner in = new Scanner(System.in);
             String command = in.next();
@@ -31,26 +33,21 @@ public class AdminState extends AbstractState implements State {
 
         switch (command) {
             case "Help":
-                System.out.println("On the page you can see all objects of this class");
+                System.out.println("On the page you can work with style");
                 break;
             case "State":
                 System.out.println("AdminState");
                 break;
-            case "Style":
-                controller.setCurrentState(new StyleState(controller));
+            case "LoadAllStyle":
+                System.out.println("all style\n");
+                serviceStyle.SearchFullAll();
                 break;
-            case "Company":
-                controller.setCurrentState(new CompanyState(controller));
+            case "ClearStyle":
+                serviceStyle.DeleteAll();
+                System.out.println("Successful\n");
                 break;
-            case "Films":
-                controller.setCurrentState(new FilmState(controller));
-                break;
-            case "Actors":
-                controller.setCurrentState(new ActorState(controller));
-                break;
-            case "Change":
-                System.out.println("Change state\n");
-                controller.setCurrentState(new NoUserState(controller));
+            case "Back":
+                controller.setCurrentState(new AdminState(controller));
                 break;
             case "Exit":
                 System.out.println("BB");
@@ -62,4 +59,5 @@ public class AdminState extends AbstractState implements State {
                 break;
         }
     }
+
 }

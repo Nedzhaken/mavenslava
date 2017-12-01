@@ -75,6 +75,14 @@
             <version>5.2.11.Final</version>
         </dependency>
 
+        <!-- TOMCAT -->
+        <dependency>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+
 
 
         <!---->

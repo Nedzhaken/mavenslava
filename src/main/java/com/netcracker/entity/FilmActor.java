@@ -3,30 +3,28 @@ package com.netcracker.entity;
 import java.util.ArrayList;
 
 public class FilmActor {
-    private int filmid;
-    private Actor actor;
+    private String filmId;
+    private String actorId;
 
-    public void setFilmid(int filmid) {
-        this.filmid = filmid;
+    public void setFilmId(String filmId) {
+        this.filmId = filmId;
     }
 
-    public void setActor(Actor actor) {
-        this.actor = actor;
+    public void setActorId(String actorId) {
+        this.actorId = actorId;
     }
 
-    public FilmActor() {
+    public FilmActor(String filmId, String actorId) {
+
+        this.filmId = filmId;
+        this.actorId = actorId;
     }
 
-    public FilmActor(int filmid, Actor actor) {
-        this.filmid = filmid;
-        this.actor = actor;
+    public String getFilmId() {
+        return filmId;
     }
 
-    public int getFilmid() {
-        return filmid;
-    }
-
-    public Actor getActor() {
-        return actor;
+    public String getActorId() {
+        return actorId;
     }
 }

@@ -7,6 +7,6 @@ import java.util.ArrayList;
 
 public interface StyleRepository {
 
-    public void save(Style style);
-    public ArrayList<Style> load();
+//    public void save(Style style);
+//    public ArrayList<Style> load();
 }

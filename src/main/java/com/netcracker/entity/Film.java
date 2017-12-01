@@ -7,8 +7,8 @@ import java.util.UUID;
 
 public class Film {
 
-    private UUID filmid;
-    private Date releasedate;
+    private String filmid;
+    private String releasedate;
     private Style style;
     private String name;
     private CinemaCompany company;
@@ -16,11 +16,11 @@ public class Film {
     private List<Actor> actors;
 
     public Film() {
-        this.filmid=UUID.randomUUID();
+        this.filmid=UUID.randomUUID().toString();
     }
 
-    public Film(Date releasedate, Style style, String name, CinemaCompany company, int bookid) {
-        filmid=UUID.randomUUID();
+    public Film(String name, Style style, String releasedate, CinemaCompany company, int bookid) {
+        this.filmid=UUID.randomUUID().toString();
         this.releasedate = releasedate;
         this.style = style;
         this.name = name;
@@ -28,7 +28,13 @@ public class Film {
         this.bookid = bookid;
     }
 
-    public void setReleasedate(Date releasedate) {
+    public Film(String filmid, String filmname, String releasedate) {
+        this.filmid=filmid;
+        this.releasedate = releasedate;
+        this.name = filmname;
+    }
+
+    public void setReleasedate(String releasedate) {
         this.releasedate = releasedate;
     }
 
@@ -52,9 +58,9 @@ public class Film {
         this.actors = actors;
     }
 
-    public UUID getFilmid() { return filmid; }
+    public String getFilmId() { return filmid; }
 
-    public Date getReleasedate() {
+    public String getReleasedate() {
         return releasedate;
     }
 
@@ -78,7 +84,7 @@ public class Film {
 
     @Override
     public String toString(){
-        return "Film [id="+getFilmid().toString()+" name="+getName()+"]";
+        return "Film [id="+getFilmId().toString()+" name="+getName()+" releasedate="+getReleasedate()+"]";
     }
 
 }

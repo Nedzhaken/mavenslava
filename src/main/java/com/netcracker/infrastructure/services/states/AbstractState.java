@@ -8,7 +8,7 @@ public abstract class AbstractState implements State {
                 System.out.println("Program by Slava");
                 return true;
             default:
-                System.out.println("Error. Repeat command.");
+                //System.out.println("Error. Repeat command.");
                 break;
         }
 

@@ -31,7 +31,7 @@ public class CinemaCompany {
         this.films = films;
     }
 
-    public String getCompanyid() {
+    public String getCompanyId() {
         return companyid;
     }
 
@@ -46,6 +46,6 @@ public class CinemaCompany {
 
     @Override
     public String toString(){
-        return "Company [id="+getCompanyid().toString()+" name="+getCompanyname()+"]";
+        return "Company [id="+getCompanyId().toString()+" name="+getCompanyname()+"]";
     }
 }

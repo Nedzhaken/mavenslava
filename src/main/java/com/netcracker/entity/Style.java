@@ -5,16 +5,21 @@ import java.util.UUID;
 
 public class Style {
 
-    private UUID styleid;
+    private String styleid;
     private String name;
     private List<Film> films;
 
     public Style() {
-        this.styleid=UUID.randomUUID();
+        this.styleid=UUID.randomUUID().toString();
     }
 
-    public Style(String name) {
-        this.styleid=UUID.randomUUID();
+    public Style(String styleid, String name) {
+        this.styleid=styleid;
+        this.name = name;
+    }
+
+    public Style( String name) {
+        this.styleid=UUID.randomUUID().toString();
         this.name = name;
     }
 
@@ -30,7 +35,7 @@ public class Style {
         this.name = name;
     }
 
-    public UUID getStyleid() {
+    public String getStyleId() {
         return styleid;
     }
 
@@ -42,6 +47,6 @@ public class Style {
 
     @Override
     public String toString(){
-        return "Style [id="+getStyleid().toString()+" name="+getName()+"]";
+        return "Style [id="+getStyleId().toString()+" name="+getName()+"]";
     }
 }

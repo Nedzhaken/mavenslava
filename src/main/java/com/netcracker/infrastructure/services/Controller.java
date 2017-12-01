@@ -9,13 +9,17 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Controller {
-//    private StyleRepository styleRepository;
 
     SessionFactory sessionFactory;
+    boolean b = true;
     State currentState = new NoUserState(this);
 
     public Controller(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
+    }
+
+    public void setB(boolean b) {
+        this.b = b;
     }
 
     public State getCurrentState() {
@@ -27,19 +31,8 @@ public class Controller {
     }
 
     public void start() {
-        boolean b = true;
         while (b) {
-            System.out.println("1 - Information about styles\n2 - End programms");
-            try {
-                Scanner in = new Scanner(System.in);
-                String command = in.next();
-                currentState.analyzeCommand(command);
-
-            } catch (InputMismatchException r) {
-                System.out.println("Error. Not number.\n");
-            }
-
-
+            currentState.work();
         }
     }
 

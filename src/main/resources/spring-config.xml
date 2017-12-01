@@ -44,36 +44,49 @@
     <bean id="CinemaCompanyRepositoryImpl" class="com.netcracker.infrastructure.repositories.CinemaCompanyRepositoryImpl">
         <constructor-arg name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>
     </bean>
-    <!--<bean id="sessionFactory"-->
-          <!--class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
-        <!--<property name="dataSource" ref="dataSource" />-->
-        <!--<property name="annotatedClasses">-->
-            <!--<list>-->
-                <!--<value>com.netcracker.entity.Style</value>-->
-                <!--<value>com.netcracker.entity.Actor</value>-->
-                <!--<value>com.netcracker.entity.Film</value>-->
-            <!--</list>-->
-        <!--</property>-->
-        <!--<property name="hibernateProperties">-->
-            <!--<props>-->
-                <!--<prop key="hibernate.hbm2ddl.auto">create</prop>-->
-                <!--<prop key="hibernate.show_sql">true</prop>-->
-                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="FilmRepositoryImpl" class="com.netcracker.infrastructure.repositories.FilmRepositoryImpl">
+        <constructor-arg name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="StyleRepositoryImpl" class="com.netcracker.infrastructure.repositories.StyleRepositoryImpl">
+        <constructor-arg name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="ActorRepositoryImpl" class="com.netcracker.infrastructure.repositories.ActorRepositoryImpl">
+        <constructor-arg name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="FilmActorRepositoryImpl" class="com.netcracker.infrastructure.repositories.FilmActorRepositoryImpl">
+        <constructor-arg name="namedParameterJdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
 
-    <!--<bean id="controller" class="com.netcracker.infrastructure.services.Controller">-->
-        <!--<constructor-arg ref="sessionFactory"></constructor-arg>-->
-    <!--</bean>-->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+            <list>
+                <value>com.netcracker.entity.Style</value>
+                <value>com.netcracker.entity.Actor</value>
+                <value>com.netcracker.entity.Film</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            </props>
+        </property>
+    </bean>
 
-    <!--&lt;!&ndash;TRANSACTIONS&ndash;&gt;-->
+    <bean id="controller" class="com.netcracker.infrastructure.services.Controller">
+        <constructor-arg ref="sessionFactory"></constructor-arg>
+    </bean>
 
-    <!--<bean id="transactionManager"-->
-          <!--class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
-        <!--<property name="sessionFactory" ref="sessionFactory" />-->
-    <!--</bean>-->
+    <!--TRANSACTIONS-->
 
-    <!--<tx:annotation-driven />-->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <tx:annotation-driven />
 
  </beans>

@@ -6,18 +6,25 @@ import java.util.UUID;
 
 public class Actor {
 
-    private UUID actoridd;
+    private String actorid;
     private String firstname;
     private String lastname;
-    private Calendar birthdate;
+    private String  birthdate;
     private List<Film> films;
 
     public Actor() {
-        this.actoridd=UUID.randomUUID();
+        this.actorid=UUID.randomUUID().toString();
     }
 
-    public Actor(String firstname, String lastname, Calendar birthdate) {
-        this.actoridd=UUID.randomUUID();
+    public Actor(String firstname, String lastname, String  birthdate) {
+        this.actorid=UUID.randomUUID().toString();
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+    }
+
+    public Actor(String actorId, String firstname, String lastname, String  birthdate) {
+        this.actorid=actorId;
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;
@@ -31,7 +38,7 @@ public class Actor {
         this.lastname = lastname;
     }
 
-    public void setBirthdate(Calendar birthdate) {
+    public void setBirthdate(String  birthdate) {
         this.birthdate = birthdate;
     }
 
@@ -39,8 +46,8 @@ public class Actor {
         this.films = films;
     }
 
-    public UUID getActorid() {
-        return actoridd;
+    public String getActorid() {
+        return actorid;
     }
 
     public String getFirstname() {
@@ -55,7 +62,7 @@ public class Actor {
         return firstname+' '+lastname;
     }
 
-    public Calendar getBirthdate() {
+    public String  getBirthdate() {
         return birthdate;
     }
 
@@ -70,7 +77,7 @@ public class Actor {
             return null;
         }
         else{
-            return "Style [id="+getActorid().toString()+" name="+getName()+"]";
+            return "Actor [id="+getActorid()+" name="+getName()+" birthdate="+getBirthdate()+"]";
         }
 
     }

@@ -1,20 +1,22 @@
 package com.netcracker.infrastructure.services.states;
 
 import com.netcracker.infrastructure.services.Controller;
+import com.netcracker.infrastructure.services.ServiceFilm;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AdminState extends AbstractState implements State {
+public class FilmState extends AbstractState implements State {
 
+    ServiceFilm serviceFilm=new ServiceFilm();
     private Controller controller;
 
-    public AdminState(Controller controller) {
+    public FilmState(Controller controller) {
         this.controller = controller;
     }
     @Override
     public void work(){
-        System.out.println("Help\nState\nStyle\nCompany\nFilms\nActors\nChange\nExit\n");
+        System.out.println("Help\nState\nLoadAllFilms\nLoadFilmsByName\nLoadFilmsByPartName\nClearFilms\nBack\nExit\n");
         try {
             Scanner in = new Scanner(System.in);
             String command = in.next();
@@ -31,26 +33,29 @@ public class AdminState extends AbstractState implements State {
 
         switch (command) {
             case "Help":
-                System.out.println("On the page you can see all objects of this class");
+                System.out.println("On the page you can work with films");
                 break;
             case "State":
                 System.out.println("AdminState");
                 break;
-            case "Style":
-                controller.setCurrentState(new StyleState(controller));
+            case "LoadAllFilms":
+                System.out.println("all films\n");
+                serviceFilm.SearchFullAll();
                 break;
-            case "Company":
-                controller.setCurrentState(new CompanyState(controller));
+            case "LoadFilmsByName":
+                System.out.println("Name film?\n");
+                serviceFilm.SearchFullAllByName();
                 break;
-            case "Films":
-                controller.setCurrentState(new FilmState(controller));
+            case "LoadFilmsByPartName":
+                System.out.println("Part Name film?\n");
+                serviceFilm.SearchFullAllByPartName();
                 break;
-            case "Actors":
-                controller.setCurrentState(new ActorState(controller));
+            case "ClearFilms":
+                serviceFilm.DeleteAll();
+                System.out.println("Successful\n");
                 break;
-            case "Change":
-                System.out.println("Change state\n");
-                controller.setCurrentState(new NoUserState(controller));
+            case "Back":
+                controller.setCurrentState(new AdminState(controller));
                 break;
             case "Exit":
                 System.out.println("BB");
@@ -62,4 +67,5 @@ public class AdminState extends AbstractState implements State {
                 break;
         }
     }
+
 }
