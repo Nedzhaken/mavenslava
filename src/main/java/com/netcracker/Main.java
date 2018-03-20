@@ -18,9 +18,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-                Controller controller = context.getBean(Controller.class);
-        controller.start();
+
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+//                Controller controller = context.getBean(Controller.class);
+//        controller.start();
 //        CinemaCompanyRepositoryImpl cinemaCompanyRepository=context.getBean(CinemaCompanyRepositoryImpl.class);
 //        ActorRepositoryImpl actorRepository=context.getBean(ActorRepositoryImpl.class);
 //        FilmRepositoryImpl filmRepository=context.getBean(FilmRepositoryImpl.class);
