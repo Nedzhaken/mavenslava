@@ -8,7 +8,7 @@ import com.netcracker.infrastructure.repositories.ActorRepositoryImpl;
 import com.netcracker.infrastructure.repositories.CinemaCompanyRepositoryImpl;
 import com.netcracker.infrastructure.repositories.FilmRepositoryImpl;
 import com.netcracker.infrastructure.repositories.StyleRepositoryImpl;
-import com.netcracker.infrastructure.services.Controller;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
@@ -18,14 +18,15 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-                Controller controller = context.getBean(Controller.class);
-        controller.start();
+
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+//                Controller controller = context.getBean(Controller.class);
+//        controller.start();
 //        CinemaCompanyRepositoryImpl cinemaCompanyRepository=context.getBean(CinemaCompanyRepositoryImpl.class);
 //        ActorRepositoryImpl actorRepository=context.getBean(ActorRepositoryImpl.class);
 //        FilmRepositoryImpl filmRepository=context.getBean(FilmRepositoryImpl.class);
 //        StyleRepositoryImpl styleRepository=context.getBean(StyleRepositoryImpl.class);
-
+//
 //        cinemaCompanyRepository.deleteAll();
 //        actorRepository.deleteAll();
 //        filmRepository.deleteAll();

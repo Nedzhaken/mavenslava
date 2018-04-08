@@ -1,36 +1,30 @@
 package com.netcracker.infrastructure.services;
 
-import com.netcracker.entity.Film;
 import com.netcracker.entity.Style;
-import com.netcracker.infrastructure.repositories.StyleRepository;
 import com.netcracker.infrastructure.repositories.StyleRepositoryImpl;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
+@Transactional
 public class ServiceStyle {
-    private ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-    StyleRepositoryImpl styleRepository=context.getBean(StyleRepositoryImpl.class);
 
-    public void SearchAll(){
-        List<Style> list=styleRepository.loadAll();
-        for(Style element : list) {
-            System.out.println(element.toString());
-        }
+    @Autowired
+    public StyleRepositoryImpl styleRepository;
+
+    public List<Style> loadAll() {
+        return styleRepository.loadAll();
     }
 
-    public void DeleteAll(){
-        styleRepository.deleteAll();
+    public List<Style> loadByStyleName(String styleName) {
+        return styleRepository.loadByStyleName(styleName);
     }
 
-    public void SearchFullAll(){
-        List<Style> list=styleRepository.loadAllFull();
-        for(Style element : list) {
-            System.out.println(element.toString()+"\n");
-            for (Film element1 : element.getFilms()){
-                System.out.println("   "+element1.toString()+"\n");
-            }
-        }
+    public List<Style> loadAllFull() {
+        return styleRepository.loadAllFull();
     }
 
 }

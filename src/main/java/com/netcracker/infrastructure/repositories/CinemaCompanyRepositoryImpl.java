@@ -5,15 +5,18 @@ import com.netcracker.entity.Film;
 import com.netcracker.infrastructure.Mapper.CinemaCompanyMapper;
 import com.netcracker.infrastructure.Mapper.FilmMapper;
 import com.netcracker.infrastructure.Mapper.FullFilmMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CinemaCompanyRepositoryImpl implements CinemaCompanyRepository {
-
+@Repository
+public class CinemaCompanyRepositoryImpl {
+    @Autowired
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     public CinemaCompanyRepositoryImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {

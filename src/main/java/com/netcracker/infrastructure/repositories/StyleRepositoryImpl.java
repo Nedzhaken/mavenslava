@@ -6,8 +6,10 @@ import com.netcracker.entity.Style;
 import com.netcracker.infrastructure.Mapper.FilmMapper;
 import com.netcracker.infrastructure.Mapper.FullFilmMapper;
 import com.netcracker.infrastructure.Mapper.StyleMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,9 +18,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class StyleRepositoryImpl implements StyleRepository {
-    private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+@Repository
+public class StyleRepositoryImpl {
 
+
+    public NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+
+   @Autowired
     public StyleRepositoryImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
@@ -93,6 +99,10 @@ public class StyleRepositoryImpl implements StyleRepository {
                     new FilmMapper());
 
             result.get(i).setFilms(films);
+            for (int j=0;j<result.get(i).getFilms().size();j++){
+                result.get(i).getFilms().get(j).setStyle(loadByStyleID(result.get(i).getStyleId()));
+
+            }
         }
 
         return result;

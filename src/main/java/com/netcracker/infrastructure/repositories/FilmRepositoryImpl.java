@@ -6,14 +6,18 @@ import com.netcracker.infrastructure.Mapper.FilmActorMapper;
 import com.netcracker.infrastructure.Mapper.FilmMapper;
 import com.netcracker.infrastructure.Mapper.FullFilmMapper;
 import com.netcracker.infrastructure.services.ProxyFilmList;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class FilmRepositoryImpl{
+    @Autowired
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     public FilmRepositoryImpl(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
