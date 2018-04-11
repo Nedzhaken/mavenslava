@@ -36,7 +36,7 @@ public class ServiceStyle {
     }
 
     public List<Style> loadByStyleNameFull(String styleName){
-        return styleRepository.loadByStyleNameFull(styleName);
+         return styleRepository.loadByStyleNameFull(styleName);
     }
 
     public Style loadByStyleIDFull(String styleId){
@@ -47,7 +47,7 @@ public class ServiceStyle {
         styleRepository.deleteAll();
     }
 
-    public  void deleteStyleName(String styleName) {
+    public void deleteStyleName(String styleName){
         styleRepository.deleteStyleName(styleName);
     }
 
