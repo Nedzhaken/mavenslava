@@ -5,21 +5,21 @@ import java.util.UUID;
 
 public class Style {
 
-    private String styleid;
+    private String styleId;
     private String name;
     private List<Film> films;
 
     public Style() {
-        this.styleid=UUID.randomUUID().toString();
+        this.styleId=UUID.randomUUID().toString();
     }
 
     public Style(String styleid, String name) {
-        this.styleid=styleid;
+        this.styleId=styleid;
         this.name = name;
     }
 
     public Style( String name) {
-        this.styleid=UUID.randomUUID().toString();
+        this.styleId=UUID.randomUUID().toString();
         this.name = name;
     }
 
@@ -36,7 +36,7 @@ public class Style {
     }
 
     public String getStyleId() {
-        return styleid;
+        return styleId;
     }
 
     public String getName() {
