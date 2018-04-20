@@ -2,10 +2,10 @@ package com.netcracker.controller;
 
 import com.netcracker.entity.Style;
 import com.netcracker.infrastructure.services.ServiceStyle;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.ApiResponse;
+//import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/styles/")
-@Api(value = "StyleControllerAPI", produces = MediaType.APPLICATION_JSON_VALUE)
+//@Api(value = "StyleControllerAPI", produces = MediaType.APPLICATION_JSON_VALUE)
 public class StyleController {
 
 
@@ -50,8 +50,8 @@ public class StyleController {
     public  List<Style> loadByStyleName(@PathVariable("name") String name){
                 return StyleService.loadByStyleName(name);    }
 
-    @ApiOperation("Gets the product with specific id")
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Style.class)})
+   // @ApiOperation("Gets the product with specific id")
+    //@ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Style.class)})
     @RequestMapping(value="loadid/{id}", method = RequestMethod.GET)
     public Style loadByStyleID(@PathVariable("id") String id){
         return StyleService.loadByStyleID(id);
