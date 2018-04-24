@@ -1,4 +1,4 @@
-package com.netcracker;
+package com.netcracker.Servlet;
 
 import com.netcracker.config.SpringConfig;
 import com.netcracker.entity.Style;
