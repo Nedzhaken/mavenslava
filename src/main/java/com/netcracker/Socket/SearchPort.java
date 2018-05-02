@@ -1,10 +1,9 @@
-package com.netcracker;
+package com.netcracker.Socket;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
 
 public class SearchPort extends RecursiveTask {

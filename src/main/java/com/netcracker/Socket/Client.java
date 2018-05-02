@@ -1,4 +1,4 @@
-package com.netcracker;
+package com.netcracker.Socket;
 
 import java.io.*;
 import java.net.InetAddress;

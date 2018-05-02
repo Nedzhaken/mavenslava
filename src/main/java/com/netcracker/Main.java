@@ -1,5 +1,7 @@
 package com.netcracker;
 
+import com.netcracker.Socket.SearchPort;
+
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ForkJoinPool;
 
